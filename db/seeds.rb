@@ -1,9 +1,9 @@
 
 people = [
   { name: "Audrey", bio: "Long thumbs", birthday: Date.new(1986, 10, 19)},
-  { name: "Gregory", bio:"The nose knows", birthday: Date.new(1976, 12, 03)},
-  { name: "Geena", bio: "Loves to do a cartwheel", birthday: Date.new(1987, 09, 08)},
-  { name: "Hattie", bio: "Cloudy days are the best", birthday: Date.new(1995, 06, 23) }
+  { name: "Gregory", bio:"The nose knows", birthday: Date.new(1976, 12, 3)},
+  { name: "Geena", bio: "Loves to do a cartwheel", birthday: Date.new(1987, 9, 8)},
+  { name: "Hattie", bio: "Cloudy days are the best", birthday: Date.new(1995, 6, 23) }
 ]
 
 people.each do |seed|
@@ -25,12 +25,12 @@ quotes.each do |quote|
 end
 
 comments = [
-  { body: "Best.", comment_id: 1, quote_id: 2},
-  { body: "+1000", comment_id: 1, poster_id: 3 },
-  { body: "Noooo hahaha", comment_id: 2, poster_id: 1},
-  { body: "Heyyyy", comment_id: 4, poster_id: 2 },
-  { body: "Never. Again.", comment_id: 5, poster_id: 3},
-  { body: "Forevz", comment_id: 2, poster_id: 4}
+  { body: "Best.", commenter_id: 1, quote_id: 2},
+  { body: "+1000", commenter_id: 1, quote_id: 3 },
+  { body: "Noooo hahaha", commenter_id: 2, quote_id: 1},
+  { body: "Heyyyy", commenter_id: 4, quote_id: 2 },
+  { body: "Never. Again.", commenter_id: 5, quote_id: 3},
+  { body: "Forevz", commenter_id: 2, quote_id: 4}
 ]
 
 comments.each do |comment|
