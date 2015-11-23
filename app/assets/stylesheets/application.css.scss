@@ -1,3 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open Sans|');
+
+
+
+// welcomepage
+
+a.welcomepage {
+  display: block;
+  font-size: 20px;
+  padding-top: 100px;
+}
+
+div.welcomepage {
+  text-align: center;
+  padding: 80px;
+}
+
+h1.welcomepage {
+  text-align: center;
+}
+
+h2.welcomepage {
+text-align: center;
+}
