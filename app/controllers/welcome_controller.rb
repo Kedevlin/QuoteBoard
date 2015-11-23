@@ -6,6 +6,6 @@ class WelcomeController < ApplicationController
   end
 
   def index
-    @random_quote = @quotes[rand(@quotes.count)].body
+    @random_quote = @quotes[rand(@quotes.count)]
   end
 end
