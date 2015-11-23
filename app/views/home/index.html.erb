@@ -1,0 +1,15 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<!-- Alternatively, you could have a Go submit button next to the dropdown that submits the form and then have Rails perform a server-side redirect to the page for the selected option using the redirect_to helper. -->
+
+<section>
+  <%= form_tag person_select_path, method: :get do %>
+     <fieldset>
+       <legend> Who are you?</legend>
+       <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Select a person:") %>
+       <br>
+       <%= submit_tag "Go to my quotes page" %>
+     </fieldset>
+   <% end %>
+</section>
