@@ -1,27 +1,29 @@
-<h1>Cohort Four Quotes</h1>
+<div class="text-center container">
+  <h1>Cohort Four Quotes</h1>
 
-<section>
-  <%= form_tag person_select_path, method: :get do %>
-     <fieldset>
-       <legend> Who are you?</legend>
-       <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Select a person:") %>
-       <br>
-       <%= submit_tag "Go to my quotes page" %>
-     </fieldset>
+  <section class="text-center container">
+    <%= form_tag person_select_path, method: :get do %>
+       <fieldset class="text-center container">
+         <legend> Who are you?</legend>
+         <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Select a person:") %>
+         <br>
+         <%= submit_tag "Go to my quotes page" %>
+       </fieldset>
+     <% end %>
+  </section>
+
+  <div class="text-center container">
+    <table class="table">
+      <% @quotes.each do |quote| %>
+    <tr>
+      <td>
+        <%= link_to "#{quote.body}", quote_path(quote) %>
+      </td>
+      <td>
+        <%= link_to "#{quote.speaker.name}", home_person_path(quote.speaker) %>
+      </td>
+   </tr>
    <% end %>
-</section>
-
-<section>
-  <table>
-    <% @quotes.each do |quote| %>
-  <tr>
-    <td>
-      <%= quote.body %>
-    </td>
-    <td>
-      <%= link_to "#{quote.speaker.name}", home_person_path(quote.speaker) %>
-    </td>
- </tr>
- <% end %>
-  </table>
-</section>
+    </table>
+  </div>
+</div>
