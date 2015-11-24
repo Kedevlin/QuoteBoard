@@ -2,6 +2,65 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open Sans|');
 
+//stickynotes
+*{
+  margin:0;
+  padding:0;
+}
+
+a#speaker.sticky {
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:5em;
+  width:10em;
+  padding:2em;
+}
+
+a#quote.sticky {
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:5em;
+  width:10em;
+  padding:2.5em;
+}
+
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  background:#666;
+  color:#fff;
+}
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+ul,li{
+  list-style:none;
+}
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a {
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:5em;
+  width:10em;
+  padding:1em;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+
+
 
 
 // welcomepage

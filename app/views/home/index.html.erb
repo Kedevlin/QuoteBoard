@@ -17,17 +17,15 @@
   </section>
 
   <div class="text-center container">
-    <table class="table">
+    <ul>
       <% @quotes.each do |quote| %>
-    <tr>
-      <td>
-        <%= link_to "#{quote.body}", home_quote_path(quote) %>
-      </td>
-      <td>
-        <%= link_to "#{quote.speaker.name}", home_person_path(quote.speaker) %>
-      </td>
-   </tr>
-   <% end %>
-  </table>
+        <li>
+          <h2>
+            <%= link_to "#{quote.body}", home_quote_path(quote), :class => "sticky", :id => "quote" %>
+            <%= link_to "~#{quote.speaker.name}", home_person_path(quote.speaker), :class => "sticky", :id => "speaker" %>
+          </h2>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
