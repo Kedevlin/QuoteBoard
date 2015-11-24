@@ -1,6 +1,10 @@
 <div class="text-center container">
   <h1>Cohort Four Quotes</h1>
 
+  <p>
+    <%= link_to "Add Someone", new_person_path %>
+  </p>
+
   <section class="text-center container">
     <%= form_tag person_select_path, method: :get do %>
        <fieldset class="text-center container">
@@ -17,13 +21,13 @@
       <% @quotes.each do |quote| %>
     <tr>
       <td>
-        <%= link_to "#{quote.body}", quote_path(quote) %>
+        <%= link_to "#{quote.body}", home_quote_path(quote) %>
       </td>
       <td>
         <%= link_to "#{quote.speaker.name}", home_person_path(quote.speaker) %>
       </td>
    </tr>
    <% end %>
-    </table>
+  </table>
   </div>
 </div>

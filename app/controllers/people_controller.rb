@@ -1,12 +1,21 @@
 class PeopleController < ApplicationController
   before_action :get_people
 
+  def create
+    Person.create(person_params[:person])
+    redirect_to :controller => 'home', :action => 'index'
+  end
+
   def get_people
     @people = Person.all
   end
 
   def home_person
     @person = Person.find(params[:id])
+  end
+
+  def new
+    @person = Person.new
   end
 
   def person_home

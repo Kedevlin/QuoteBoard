@@ -1,0 +1,29 @@
+<section>
+  <%= form_for @person  do |f| %>
+    <fieldset>
+      <legend>New Person</legend>
+      <div>
+        <%= f.label :name, "name"%>
+        <%= f.text_field :name %><br />
+      </div>
+
+      <div>
+        <%= f.label :bio, "bio" %>
+        <%= f.text_field :bio %><br />
+      </div>
+
+      <div>
+        <%= f.label :birthday, "birthday" %>
+        <%= f.text_field :birthday %><br />
+      </div>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    </fieldset>
+  <% end %>
+
+  <nav>
+    <%= link_to "Back to Main", home_path %>
+  </nav>
+</section>
