@@ -1,1 +1,37 @@
-<h1>home_person</h1>
+<div class="text-center container">
+<h1><%= @person.name %></h1>
+<h2>From the mouth of <%= @person.name %></h2>
+</div>
+<div class="text-center container">
+  <table class="table">
+    <% @person.spoken_quotes.each do |quote| %>
+  <tr>
+    <td>
+      <%= quote.body %>
+    </td>
+    <td>
+      from <%= quote.poster.name %> at <%= quote.created_at %>
+    </td>
+ </tr>
+ <% end %>
+</table>
+</div>
+
+<div class="text-center container">
+<h2>Overheard by <%= @person.name %></h2>
+</div>
+
+<div class="text-center container">
+  <table class="table">
+    <% @person.posted_quotes.each do |quote| %>
+  <tr>
+    <td>
+      <%= quote.body %>
+    </td>
+    <td>
+      uttered by <%= quote.speaker.name %> at <%= quote.created_at %>
+    </td>
+ </tr>
+ <% end %>
+</table>
+</div>

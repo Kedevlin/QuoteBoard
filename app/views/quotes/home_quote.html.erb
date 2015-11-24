@@ -1,1 +1,25 @@
-<h1><%= @quote.body %></h1>
+<section class="text-center container">
+  <h1><%= @quote.body %></h1>
+  <h2>~<%= @quote.speaker.name %><h2>
+  <h3>overheard by <%= @quote.poster.name %><h3>
+
+</section>
+
+<div class="text-center container">
+  <table class="table">
+    <% @quote.comments.each do |comment| %>
+  <tr>
+    <td>
+      <%= comment.body %>
+    </td>
+    <td>
+      from <%= comment.commenter.name %> at <%= comment.created_at %>
+    </td>
+ </tr>
+ <% end %>
+</table>
+</div>
+
+<nav class="text-center container">
+  <%= link_to "Back to Main", home_path %>
+</nav>
