@@ -6,9 +6,15 @@ class PeopleController < ApplicationController
     redirect_to :controller => 'home', :action => 'index'
   end
 
+  def destroy
+    Person.find(params[:id]).destroy
+    redirect_to home_path
+  end
+
   def get_people
     @people = Person.all
   end
+
 
   def home_person
     @person = Person.find(params[:id])

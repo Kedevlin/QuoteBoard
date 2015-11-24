@@ -1,1 +1,48 @@
-<h1><%= @person.name %></h1>
+<div class="text-center container">
+  <h1>Hi, <%= @person.name %>!</h1>
+  <%= link_to "Self destruct",  { :controller=>"people", action: :destroy, :id => @person.id}, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+  <div class="text-center container">
+  <h2>What you've said</h2>
+  </div>
+  <div class="text-center container">
+    <table class="table">
+      <% @person.spoken_quotes.each do |quote| %>
+    <tr>
+      <td>
+        <%= quote.body %>
+      </td>
+      <td>
+        from <%= quote.poster.name %> at <%= quote.created_at %>
+      </td>
+   </tr>
+   <% end %>
+  </table>
+  </div>
+
+  <div class="text-center container">
+  <h2>What you've heard</h2>
+  </div>
+
+  <div class="text-center container">
+    <table class="table">
+      <% @person.posted_quotes.each do |quote| %>
+    <tr>
+      <td>
+        <%= quote.body %>
+      </td>
+      <td>
+        uttered by <%= quote.speaker.name %> at <%= quote.created_at %>
+      </td>
+   </tr>
+   <% end %>
+  </table>
+  </div>
+
+
+  <nav class="text-center container">
+    <%= link_to "Back to Main", home_path %>
+  </nav>
+
+</div>
