@@ -1,8 +1,5 @@
 <h1>Cohort Four Quotes</h1>
 
-
-<!-- Alternatively, you could have a Go submit button next to the dropdown that submits the form and then have Rails perform a server-side redirect to the page for the selected option using the redirect_to helper. -->
-
 <section>
   <%= form_tag person_select_path, method: :get do %>
      <fieldset>
@@ -12,4 +9,19 @@
        <%= submit_tag "Go to my quotes page" %>
      </fieldset>
    <% end %>
+</section>
+
+<section>
+  <table>
+    <% @quotes.each do |quote| %>
+  <tr>
+    <td>
+      <%= quote.body %>
+    </td>
+    <td>
+      <%= link_to "#{quote.speaker.name}", home_person_path(quote.speaker) %>
+    </td>
+ </tr>
+ <% end %>
+  </table>
 </section>

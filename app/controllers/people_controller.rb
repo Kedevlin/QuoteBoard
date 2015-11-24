@@ -5,7 +5,8 @@ class PeopleController < ApplicationController
     @people = Person.all
   end
 
-  def home
+  def home_person
+    @person = Person.find(params[:id])
   end
 
   def person_home
