@@ -2,13 +2,28 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Reenie Beanie|Open Sans|');
 
-//stickynotes
-*{
-  margin:0;
-  padding:0;
+//global
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:0 auto;
+  // background-image: url('corkboard.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+  background-repeat: repeat;
 }
 
-#speaker.sticky {
+body.container,
+body.container-fluid {
+  background-image: url("cork-board.jpg");
+  min-height: 400px;
+}
+
+//stickynotes
+
+.stickyspeaker {
   text-decoration:none;
   color:#000;
   display:block;
@@ -18,9 +33,10 @@
   height:2em;
   width:10em;
   padding-bottom:2em;
+  color:#000;
 }
 
-#quote.sticky {
+.stickyquote {
   text-decoration:none;
   color:#000;
   display:block;
@@ -29,71 +45,46 @@
   font-weight: bold;
   height:5em;
   width:9em;
-  padding-top:3em;
-  padding-bottom:3.2em;
+  padding-top:2em;
+  padding-bottom:5em;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-bottom: -5px;
+  color:#000;
 }
 
-body{
-  font-family:arial,sans-serif;
-  font-size:100%;
-  margin:3em;
-  background-image: url('corkboard.jpg');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 
-h2 {
+.stickynote {
   font-size:100%;
   font-weight:normal;
   /* Firefox */
- -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
- /* Safari+Chrome */
- -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
- /* Opera */
- box-shadow: 5px 5px 7px rgba(33,33,33,.7);
- -moz-transition:-moz-transform .15s linear;
- -o-transition:-o-transform .15s linear;
- -webkit-transition:-webkit-transform .15s linear;
-}
-ul,li{
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
   list-style:none;
-}
-
-ul{
-  overflow:hidden;
-  padding:3em;
-}
-ul li a {
-  text-decoration:none;
-  color:#000;
-  background:#FCF9D2;
-  display:block;
-  height:5em;
-  width:10em;
-  padding:1em;
-}
-ul li{
-  margin:1em;
+  margin:30px;
   float:left;
 }
 
-ul li:nth-child(even) h2{
+.stickynote:nth-child(even){
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
-}
-
-ul li:nth-child(even) h2 a.sticky{
   background-color: #DFEED1;
 }
 
-ul li:nth-child(3n) h2{
+.stickynote:nth-child(odd) {
+  background-color: #FCF9D2;
+}
+
+.stickynote:nth-child(3n){
   -o-transform:rotate(-3deg);
   -webkit-transform:rotate(-3deg);
   -moz-transform:rotate(-3deg);
@@ -101,10 +92,10 @@ ul li:nth-child(3n) h2{
   top:-5px;
 }
 
-ul li:nth-child(4n) h2 a.sticky{
+.stickynote:nth-child(4n){
   background-color: #CCE9F1;
 }
-ul li :nth-child(5n) h2{
+.stickynote:nth-child(5n){
   -o-transform:rotate(5deg);
   -webkit-transform:rotate(5deg);
   -moz-transform:rotate(5deg);
@@ -112,7 +103,7 @@ ul li :nth-child(5n) h2{
   top:-10px;
 }
 
-ul li h2:hover,ul li h2:focus{
+.stickynote:hover,ul li:focus{
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
@@ -123,6 +114,11 @@ ul li h2:hover,ul li h2:focus{
   z-index:5;
 }
 
+.stickynotes_container {
+  padding: 20px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
 // welcomepage
 
