@@ -13,10 +13,6 @@ body{
   -o-background-size: cover;
   background-size: 100%;
   background-repeat: repeat;
-}
-
-body.container,
-body.container-fluid {
   background-image: url("cork-board.jpg");
   min-height: 400px;
 }
@@ -118,6 +114,7 @@ body.container-fluid {
   padding: 20px;
   margin: 0 auto;
   overflow: hidden;
+  max-width: 790px;
 }
 
 // welcomepage

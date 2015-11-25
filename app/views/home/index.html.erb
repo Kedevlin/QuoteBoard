@@ -1,13 +1,13 @@
-<div class="text-center container">
+<div class="container text-center">
   <h1>Cohort Four Quotes</h1>
 
   <p>
     <%= link_to "Add Someone", new_person_path %>
   </p>
 
-  <section class="text-center container">
+  <section>
     <%= form_tag person_select_path, method: :get do %>
-       <fieldset class="text-center container">
+       <fieldset>
          <legend> Who are you?</legend>
          <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Select a person:") %>
          <br>
@@ -16,10 +16,10 @@
      <% end %>
   </section>
 
-  <div class="text-center container">
-    <ul class= "stickynotes_container text-center container">
+  <div>
+    <ul class= "stickynotes_container">
       <% @quotes.each do |quote| %>
-        <li class="stickynote text-center">
+        <li class="stickynote ">
               <%= link_to "#{quote.body}", home_quote_path(quote), :class => "stickyquote" %>
               <%= link_to "~#{quote.speaker.name}", home_person_path(quote.speaker), :class => "stickyspeaker" %>
         </li>
