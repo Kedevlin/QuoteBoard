@@ -21,8 +21,8 @@
       <% @quotes.each do |quote| %>
         <li>
           <h2>
-            <%= link_to "#{quote.body}", home_quote_path(quote), :class => "sticky", :id => "quote" %>
-            <%= link_to "~#{quote.speaker.name}", home_person_path(quote.speaker), :class => "sticky", :id => "speaker" %>
+              <%= link_to "#{quote.body}", home_quote_path(quote), :class => "sticky", :id => "quote" %>
+              <%= link_to "~#{quote.speaker.name}", home_person_path(quote.speaker), :class => "sticky", :id => "speaker" %>
           </h2>
         </li>
       <% end %>
