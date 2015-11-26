@@ -4,7 +4,6 @@
 
 //global
 body{
-  size: 70%;
   font-family:arial,sans-serif;
   font-size:100%;
   margin:0 auto;
@@ -16,6 +15,12 @@ body{
   background-repeat: repeat;
   background-image: url("cork-board.jpg");
   min-height: 400px;
+}
+
+.contentholder {
+  postion: relative;
+  width: 85%;
+  margin: 0 auto;
 }
 
 //stickynotes
@@ -122,11 +127,8 @@ body{
 }
 
 .stickynotes_container {
-  padding: 20px;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 960px;
-  min-width: 780px;
+  width: 100%;
+  position: relative;
 }
 
 // welcomepage
