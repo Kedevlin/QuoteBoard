@@ -25,12 +25,10 @@
           </div>
 
           <div class="col-md-1">
-          <%= form_tag person_select_path, method: :get, class: "btn btn-default menu-button" do %>
-             <fieldset>
-               <span class="glyphicon glyphicon-tasks menu-glyph"></span>
-               <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
-             </fieldset>
-          <% end %>
+            <div class="btn btn-default menu-button">
+             <span class="glyphicon glyphicon-tasks menu-glyph"></span>
+             <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
+           </div>
         </div>
       </div>
     </header>

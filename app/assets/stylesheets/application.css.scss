@@ -32,6 +32,15 @@ header {
 }
 //dropdown menus
 
+.btn-default:focus {
+  background-color: transparent;
+}
+
+.btn-default.active
+{
+  background-color: transparent;
+}
+
 select#person_id {
   margin: 0;
   -webkit-border-radius:4px;
@@ -59,8 +68,16 @@ select#person_id {
   background-color: transparent;
   border: none;
   margin-top: 25px;
-  padding-left: 1px;
-  padding-right: 1px;
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+.menu-button:hover {
+  background-color: transparent;
+}
+
+.menu-button:hover * {
+  color: #CACBC7;
 }
 
 .menu-glyph {
@@ -72,6 +89,8 @@ select#person_id {
   padding-left: 3px;
   color: #F8F8F8;
 }
+
+
 
 //stickynotes
 
