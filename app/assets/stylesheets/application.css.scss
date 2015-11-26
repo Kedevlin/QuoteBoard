@@ -122,15 +122,40 @@ body{
 a.welcomepage {
   display: block;
   font-size: 20px;
-  padding-top: 100px;
 }
 
-h1.welcomepage {
+.welquote.welcomepage {
   text-align: center;
+  max-width: 40%;
+  width: 40%;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  transform: translateY(-50%);
+  padding: 20px;
+  resize: vertical;
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  font-size: 30px;
+  font-family: Reenie Beanie;
 }
 
-h2.welcomepage {
-text-align: center;
+.welspeaker.welcomepage {
+  text-align: center;
+  width: 40%;
+  max-width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  padding: 20px;
+  resize: vertical;
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  font-size: 30px;
+  font-family: Reenie Beanie;
 }
 
 .welcomesticky {
@@ -138,6 +163,13 @@ text-align: center;
   background-position: center;
   background-size: 70%;
   background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 400px;
   min-width: 200px;
+  max-height: 470px;
+  max-width: 580px;
+  position: relative;
+  margin: 0 auto;
+  resize: vertical;
+  overflow: auto;
+  margin-top: 20px;
 }
