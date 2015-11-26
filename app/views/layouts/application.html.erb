@@ -9,10 +9,15 @@
   </head>
   <body>
     <header>
-        <%= link_to new_person_path, class: "btn btn-default" do %>
-        <span class="glyphicon glyphicon-user menu-button"></span>
-         New Person
-        <% end %>
+      <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
+        <span class="glyphicon glyphicon-plus menu-glyph"></span>
+        <span class="menu-word">New Quote</span>
+      <% end %>
+
+      <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
+        <span class="glyphicon glyphicon-user menu-glyph"></span>
+        <span class="menu-word">New Person</span>
+      <% end %>
     </header>
     <div class="container text-center">
       <div class= "contentholder">

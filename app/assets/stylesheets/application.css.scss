@@ -58,8 +58,27 @@ select#person_id {
 }
 
 //header menu
+
 .menu-button {
-  font-size:12px;
+  display: inline-block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  float: left;
+}
+
+.menu-glyph {
+  font-size:13px;
+  color: #F8F8F8;
+}
+
+.menu-word {
+  padding-left: 3px;
+  color: #F8F8F8;
 }
 
 //stickynotes
