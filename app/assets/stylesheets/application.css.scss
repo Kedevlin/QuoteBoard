@@ -4,6 +4,7 @@
 
 //global
 body{
+  size: 70%;
   font-family:arial,sans-serif;
   font-size:100%;
   margin:0 auto;
@@ -49,6 +50,16 @@ body{
   color:#000;
 }
 
+.welquote a {
+  font-weight: bold;
+  color: black;
+}
+
+.welquote a:hover {
+  text-decoration: none;
+  font-weight: bolder;
+  color: grey;
+}
 
 .stickynote {
   font-size:100%;
@@ -114,7 +125,8 @@ body{
   padding: 20px;
   margin: 0 auto;
   overflow: hidden;
-  max-width: 790px;
+  max-width: 960px;
+  min-width: 780px;
 }
 
 // welcomepage
