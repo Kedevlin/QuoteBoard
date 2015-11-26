@@ -1,5 +1,4 @@
-<div class="container text-center">
-  <h1>Cohort Four Quotes</h1>
+  <h1>Quotehort Four</h1>
 
   <p>
     <%= link_to "Add Someone", new_person_path %>
@@ -8,8 +7,7 @@
   <section>
     <%= form_tag person_select_path, method: :get do %>
        <fieldset>
-         <legend> Who are you?</legend>
-         <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Select a person:") %>
+         <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Who are you?") %>
          <br>
          <%= submit_tag "Go to my quotes page" %>
        </fieldset>
@@ -26,4 +24,3 @@
       <% end %>
     </ul>
   </section>
-</div>
