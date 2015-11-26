@@ -126,19 +126,21 @@ a.welcomepage {
 
 .welquote.welcomepage {
   text-align: center;
-  max-width: 40%;
-  width: 40%;
+  max-width: 45%;
+  width: 45%;
   position: absolute;
-  top: 30%;
+  top: 28%;
   left: 25%;
   transform: translateY(-50%);
   padding: 20px;
+  padding-bottom: 5px;
   resize: vertical;
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
-  font-size: 30px;
+  font-size: 25px;
   font-family: Reenie Beanie;
+  overflow: hidden;
 }
 
 .welspeaker.welcomepage {
@@ -154,7 +156,7 @@ a.welcomepage {
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
-  font-size: 30px;
+  font-size: 25px;
   font-family: Reenie Beanie;
 }
 
