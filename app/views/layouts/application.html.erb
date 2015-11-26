@@ -7,9 +7,13 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
   </head>
-  <body class="container text-center">
-    <div class= "contentholder">
-      <%= yield %>
+  <body>
+    <header>
+    </header>
+    <div class="container text-center">
+      <div class= "contentholder">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
