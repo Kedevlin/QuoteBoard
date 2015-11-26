@@ -27,7 +27,8 @@
           <div class="col-md-1">
           <%= form_tag person_select_path, method: :get, class: "btn btn-default menu-button" do %>
              <fieldset>
-               <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "My Page")%>
+               <span class="glyphicon glyphicon-tasks menu-glyph"></span>
+               <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word"} %>
                <%= submit_tag "Go" %>
              </fieldset>
           <% end %>
