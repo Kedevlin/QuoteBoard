@@ -8,19 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
   </head>
   <body>
-    <header>
-      <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
-        <span class="glyphicon glyphicon-plus menu-glyph"></span>
-        <span class="menu-word">New Quote</span>
-      <% end %>
+      <header class="container-fluid">
+        <div class="row">
+          <div class= "col-md-1">
+            <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
+              <span class="glyphicon glyphicon-plus menu-glyph"></span>
+              <span class="menu-word">New Quote</span>
+            <% end %>
+          </div>
 
-      <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
-        <span class="glyphicon glyphicon-user menu-glyph"></span>
-        <span class="menu-word">New Person</span>
-      <% end %>
+          <div class="col-md-1">
+            <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
+              <span class="glyphicon glyphicon-user menu-glyph"></span>
+              <span class="menu-word">New Person</span>
+            <% end %>
+          </div>
+
+          <div class="col-md-1">
+          <%= form_tag person_select_path, method: :get, class: "btn btn-default menu-button" do %>
+             <fieldset>
+               <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "My Page")%>
+               <%= submit_tag "Go" %>
+             </fieldset>
+          <% end %>
+        </div>
+      </div>
     </header>
     <div class="container text-center">
-      <div class= "contentholder">
+      <div class="row"
         <%= yield %>
       </div>
     </div>

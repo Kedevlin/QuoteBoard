@@ -1,16 +1,5 @@
 
-  <h1>Quotehort Four</h1>
-
-  <section>
-    <%= form_tag person_select_path, method: :get do %>
-       <fieldset>
-         <%= collection_select(:person, :id, Person.all, :id, :name, prompt: "Who are you?") %>
-         <br>
-         <%= submit_tag "Go to my quotes page" %>
-       </fieldset>
-     <% end %>
-  </section>
-
+  <h1 class="stickypage">Quotehort Four</h1>
   <section>
     <ul class= "stickynotes_container">
       <% @quotes.each do |quote| %>
