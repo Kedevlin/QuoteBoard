@@ -12,5 +12,18 @@ class HomeController < ApplicationController
 
   def index
   end
+#
+#   def show
+#   @products = @vendor.products
+#   end
+#
+#   if request.path_info.include?('home')
+#     render :home_vendor
+#   elsif request.path_info.include?('markets')
+#     render :market_vendor
+#   else
+#     render :show
+#   end
+# end
 
 end

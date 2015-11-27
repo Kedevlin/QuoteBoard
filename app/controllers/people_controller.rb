@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :get_people
+  before_action :get_quotes
 
   def create
     Person.create(person_params[:person])
@@ -15,6 +16,9 @@ class PeopleController < ApplicationController
     @people = Person.all
   end
 
+  def get_quotes
+    @quotes = Quote.all
+  end
 
   def home_person
     @person = Person.find(params[:id])
@@ -26,6 +30,7 @@ class PeopleController < ApplicationController
 
   def person_home
     @person = Person.find(params[:id])
+    render "home/index"
   end
 
   def select
