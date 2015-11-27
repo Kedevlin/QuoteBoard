@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Reenie Beanie|Open Sans|');
+@import url('https://fonts.googleapis.com/css?family=Reenie Beanie|Permanent Marker|');
 
 //global
 body{
@@ -116,6 +116,8 @@ h1.stickypage {
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: Permanent Marker;
+  font-size: 1.5cm;
 }
 
 .stickyspeaker {
@@ -165,6 +167,10 @@ h1.stickypage {
   float:left;
 }
 
+.stickynote a:hover {
+  text-decoration: none;
+  color: #CACBC7;
+}
 .stickynote:nth-child(even){
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
