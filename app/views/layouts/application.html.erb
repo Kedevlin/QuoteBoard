@@ -10,21 +10,21 @@
   <body>
       <header class="container-fluid">
         <div class="row">
-          <div class= "col-md-1">
+          <div class= "navbar">
             <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
               <span class="glyphicon glyphicon-plus menu-glyph"></span>
               <span class="menu-word">New Quote</span>
             <% end %>
           </div>
 
-          <div class="col-md-1">
+          <div class="navbar">
             <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
               <span class="glyphicon glyphicon-user menu-glyph"></span>
               <span class="menu-word">New Person</span>
             <% end %>
           </div>
 
-          <div class="col-md-1">
+          <div class="navbar">
             <div class="btn btn-default menu-button">
              <span class="glyphicon glyphicon-tasks menu-glyph"></span>
              <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
@@ -33,9 +33,7 @@
       </div>
     </header>
     <div class="container text-center">
-      <div class="row"
         <%= yield %>
-      </div>
     </div>
   </body>
 </html>
