@@ -101,9 +101,15 @@ select#person_id {
 //stickynotes
 
 div.stickypage {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+
+.stickynotes_container {
+  width: 100%;
+  position: relative;
 }
 
 h1.stickypage {
@@ -200,11 +206,6 @@ h1.stickypage {
   -o-transform: scale(1.25);
   position:relative;
   z-index:5;
-}
-
-.stickynotes_container {
-  width: 100%;
-  position: relative;
 }
 
 // welcomepage
