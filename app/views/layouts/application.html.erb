@@ -9,7 +9,6 @@
   </head>
   <body>
       <header class="container-fluid">
-        <div class="row">
           <div class= "navbar">
             <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
               <span class="glyphicon glyphicon-plus menu-glyph"></span>
@@ -30,10 +29,7 @@
              <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
            </div>
         </div>
-      </div>
     </header>
-    <div class="container text-center">
         <%= yield %>
-    </div>
   </body>
 </html>
