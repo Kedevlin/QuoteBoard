@@ -30,6 +30,7 @@ class PeopleController < ApplicationController
 
   def person_home
     @person = Person.find(params[:id])
+    @faux_logged_in = request.path_info.include?('people')
     render "home/index"
   end
 

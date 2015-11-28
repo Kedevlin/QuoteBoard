@@ -9,12 +9,14 @@
   </head>
   <body>
       <header class="container-fluid">
+        <% if @faux_logged_in %>
           <div class= "navbar">
             <%= link_to new_quote_path, class: "btn btn-default menu-button" do %>
               <span class="glyphicon glyphicon-plus menu-glyph"></span>
               <span class="menu-word">New Quote</span>
             <% end %>
           </div>
+        <% end %>
 
           <div class="navbar">
             <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
