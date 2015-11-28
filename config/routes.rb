@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home/quotes/:id' => 'quotes#home_quote', as: :home_quote
   get 'people/select' => 'people#select', as: :person_select
   get 'people/:id/home' => 'people#person_home', as: :person_home
+  post 'people/:id/create_quote'=> 'quotes#create', as: :create_quote
 
   resources :quotes
 

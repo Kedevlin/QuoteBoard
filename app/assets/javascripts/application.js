@@ -15,3 +15,9 @@
 // = require turbolinks
 // = require bootstrap-sprockets
 // = require_tree .
+
+$(function() {
+  $("#new_quote_button").click(function(e) {
+    $("#new_quote_form").show();
+  });
+});
