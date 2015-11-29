@@ -5,8 +5,8 @@
       <% if @faux_logged_in %>
         <li class="stickynote" id="new_quote_form" style ="display:none">
            <%= form_for @new_quote, url: create_quote_path do |f| %>
-              <%= f.text_field :body, {class: "stickyquote"} %>
-              <%= f.collection_select :speaker_id, Person.all, :id, :name, {class: "stickyspeaker"} %>
+              <%= f.text_field :body, class: "stickyquote", placeholder: "Type quote here...", required: true %>
+              <%= f.collection_select(:speaker_id, Person.all, :id, :name, {:prompt => 'Who said it?'}, {:required => true, class: "stickyspeaker"}) %>
                <%= f.submit %>
            <% end %>
         </li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123165706) do
+ActiveRecord::Schema.define(version: 20151129185900) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20151123165706) do
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "bio"
-    t.date     "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

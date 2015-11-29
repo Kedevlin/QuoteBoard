@@ -108,8 +108,9 @@ div.stickypage {
 
 
 .stickynotes_container {
-  width: 100%;
+  width: 90%;
   position: relative;
+  margin: 0 auto;
 }
 
 h1.stickypage {
@@ -171,6 +172,11 @@ h1.stickypage {
   text-decoration: none;
   color: #CACBC7;
 }
+
+.stickynote:first-child {
+  background-color: #FCF9D2;
+}
+
 .stickynote:nth-child(even){
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
@@ -190,11 +196,9 @@ h1.stickypage {
   -moz-transform:rotate(-3deg);
   position:relative;
   top:-5px;
-}
-
-.stickynote:nth-child(4n){
   background-color: #CCE9F1;
 }
+
 .stickynote:nth-child(5n){
   -o-transform:rotate(5deg);
   -webkit-transform:rotate(5deg);
