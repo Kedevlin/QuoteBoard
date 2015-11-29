@@ -28,6 +28,10 @@ class PeopleController < ApplicationController
     @person = Person.new
   end
 
+  def detail
+    @person = Person.find(params[:id])
+  end
+
   def person_home
     @new_quote = Quote.new
     @person = Person.find(params[:id])
