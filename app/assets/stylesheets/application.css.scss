@@ -164,12 +164,15 @@ section.new_person {
 
 //stickynotes
 
+.create_quote_button {
+  margin: 2px;
+}
+
 div.stickypage {
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
-
 
 .stickynotes_container {
   width: 90%;
@@ -183,6 +186,24 @@ h1.stickypage {
   text-align: center;
   font-family: Permanent Marker;
   font-size: 1.5cm;
+}
+
+textarea#quote_body.stickyquote {
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  padding-bottom: 4.2em;
+}
+
+textarea#quote_body.stickyquote:focus {
+  outline: none;
+}
+
+select#quote_speaker_id {
+  width: 95px;
+  margin: 0 auto;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
 .stickyspeaker {

@@ -35,7 +35,7 @@
         <div class="menu-button-holder">
           <div class="btn btn-default menu-button">
            <span class="glyphicon glyphicon-tasks menu-glyph"></span>
-           <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Select Your Page"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
+           <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Who are you?"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
          </div>
       </div>
     </header>
