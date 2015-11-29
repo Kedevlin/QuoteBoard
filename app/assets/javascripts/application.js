@@ -21,3 +21,9 @@ $(function() {
     $("#new_quote_form").show();
   });
 });
+
+$(function() {
+  $("#cancel_button").click(function(e) {
+    $("#new_quote_form").hide();
+  });
+});

@@ -141,6 +141,7 @@ section.new_person {
   height: 60px;
   border-color: #BFBFBF;
   border-width: 1px;
+  resize: none;
 }
 
 .new_person label {
@@ -163,6 +164,24 @@ section.new_person {
 
 
 //stickynotes
+
+#cancel_button.cancel {
+  position: fixed;
+  font-size: 15px;
+  font-family: Permanent Marker;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+
+#cancel_button.cancel span {
+  padding-top: 5px;
+  top: 50%;
+  left: 50%;
+}
 
 .create_quote_button {
   margin: 2px;
@@ -193,6 +212,7 @@ textarea#quote_body.stickyquote {
   border: none;
   overflow: hidden;
   padding-bottom: 4.2em;
+  resize: none;
 }
 
 textarea#quote_body.stickyquote:focus {
