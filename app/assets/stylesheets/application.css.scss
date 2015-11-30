@@ -31,6 +31,28 @@ header {
   border-bottom: 1px solid #000;
 }
 
+// detail page
+.self_destruct_button {
+  background-color: #DD0000;
+  color: red;
+  margin-top: 50px;
+}
+
+.self_destruct_button:hover {
+  background-color: #DD0000;
+  color: red;
+  margin-top: 50px;
+}
+
+.self_destruct_button a{
+  color: white;
+}
+
+.self_destruct_button a:hover{
+  color: white;
+  text-decoration: none;
+}
+
 //dropdown menus
 
 

@@ -12,13 +12,9 @@
       <%= comment.body %>
     </td>
     <td>
-      from <%= comment.commenter.name %> at <%= comment.created_at %>
+      <%= comment.commenter.name %> at <%= comment.created_at %>
     </td>
  </tr>
  <% end %>
 </table>
 </div>
-
-<nav class="text-center container">
-  <%= link_to "Back to Main", home_path %>
-</nav>
