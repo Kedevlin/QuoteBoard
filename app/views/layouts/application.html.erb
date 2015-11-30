@@ -46,6 +46,15 @@
            <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Who are you?"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
          </div>
       </div>
+
+      <% if @on_detail %>
+      <div class="menu-button-holder">
+        <%= link_to person_home_path(id: @person.id), class: "btn btn-default menu-button", id: "back_to_index_button" do %>
+          <span class="glyphicon glyphicon-arrow-left menu-glyph"></span>
+          <span class="menu-word">Back to my index</span>
+        <% end %>
+      </div>
+      <% end %>
     </header>
         <%= yield %>
   </body>

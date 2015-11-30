@@ -30,7 +30,9 @@ header {
   background: linear-gradient(#56585D, #2F3034);
   border-bottom: 1px solid #000;
 }
+
 //dropdown menus
+
 
 .btn-default:focus {
   background-color: transparent;
@@ -57,6 +59,10 @@ select#person_id {
 }
 
 //header menu
+
+#back_to_index_button {
+  padding-left: 0px;
+}
 
 .menu-button {
   display: inline-block;
