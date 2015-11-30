@@ -32,10 +32,36 @@ header {
 }
 
 // detail page
+
+h1.detail {
+  font-family: Permanent Marker;
+  font-size: 1cm;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.detailholder {
+  width:90%;
+  background-image: url('paper.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  margin: 0 auto;
+}
+
+.detailholder td {
+  font-size: 18px;
+}
+
+.detailtable {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .self_destruct_button {
   background-color: #DD0000;
   color: red;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .self_destruct_button:hover {
