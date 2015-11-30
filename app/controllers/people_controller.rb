@@ -9,9 +9,6 @@ class PeopleController < ApplicationController
 
   def destroy
     p = Person.find(params[:id])
-    p.spoken_quotes.destroy
-    p.posted_quotes.destroy
-    p.comments.destroy
     p.destroy
     redirect_to home_path
   end

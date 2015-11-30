@@ -9,6 +9,14 @@ class QuotesController < ApplicationController
     redirect_to person_home_path(params[:id])
   end
 
+  def edit
+    @person = Person.find(params[:person_id])
+    @quote = Quote.find(params[:id])
+    @on_detail = true
+    render template: "people/detail"
+    @editing = true
+  end
+
   def get_quote
     @quote = Quote.find(params[:id])
   end
