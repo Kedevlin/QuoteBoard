@@ -13,8 +13,8 @@ class QuotesController < ApplicationController
     @person = Person.find(params[:person_id])
     @quote = Quote.find(params[:id])
     @on_detail = true
-    render template: "people/detail"
     @editing = true
+    render template: "people/detail"
   end
 
   def get_quote

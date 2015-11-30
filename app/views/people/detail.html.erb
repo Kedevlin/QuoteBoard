@@ -6,9 +6,16 @@
       <table class="table detailtable">
         <% @person.spoken_quotes.each do |quote| %>
       <tr>
-        <% if !@editing %>
+        <% if !@editing  %>
           <td>
             <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+          </td>
+        <% elsif @editing && quote.id == @quote.id %>
+          <td>
+            <h3>Add form for editing a quote </h3>
+          </td>
+        <% else %>
+          <td>
           </td>
         <% end %>
         <td>
@@ -25,12 +32,19 @@
 
       <table class="table detailtable">
         <% @person.posted_quotes.each do |quote| %>
-      <tr>
-        <% if !@editing %>
-          <td>
-            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
-          </td>
-        <% end %>
+          <tr>
+            <% if !@editing  %>
+              <td>
+                <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+              </td>
+            <% elsif @editing && quote.id == @quote.id %>
+              <td>
+                <h3>Editing a quote</h3>
+              </td>
+            <% else %>
+              <td>
+              </td>
+            <% end %>
         <td>
           <%= quote.body %>
         </td>
