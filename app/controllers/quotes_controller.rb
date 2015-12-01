@@ -28,6 +28,12 @@ class QuotesController < ApplicationController
   def show
   end
 
+  def update
+    @on_detail = true
+    @quote.update(quote_params[:quote])
+    @person = Person.find(params[:person_id])
+    render template: "people/detail"
+  end
 
 
   private

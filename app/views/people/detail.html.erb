@@ -3,57 +3,65 @@
     <h1 class="detail">Hi, <%= @person.name %>!</h1>
     <h3>You've said...</h3>
 
-      <table class="table detailtable">
-        <% @person.spoken_quotes.each do |quote| %>
-      <tr>
-        <% if !@editing  %>
+    <table class="table detailtable">
+      <% @person.spoken_quotes.each do |quote| %>
+        <tr>
+          <% if !@editing  %>
+            <td>
+              <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+            </td>
+            <td>
+              <%= quote.body %>
+            </td>
+          <% elsif @editing && quote.id == @quote.id %>
+            <td>
+              <%= form_for @quote, url: person_quote_path(@person.id, @quote.id) do |f| %>
+                <%= f.text_area :body %>
+                <%= f.submit "Go" %>
+              <% end %>
+            </td>
+          <% else %>
+            <td>
+              <%= quote.body %>
+            </td>
+          <% end %>
           <td>
-            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+            from <%= quote.poster.name %> on <%= quote.created_at.strftime("%m/%d/%Y") %>
           </td>
-        <% elsif @editing && quote.id == @quote.id %>
-          <td>
-            <h3>Add form for editing a quote </h3>
-          </td>
-        <% else %>
-          <td>
-          </td>
-        <% end %>
-        <td>
-          <%= quote.body %>
-        </td>
-        <td>
-          from <%= quote.poster.name %> on <%= quote.created_at.strftime("%m/%d/%Y") %>
-        </td>
-     </tr>
+        </tr>
      <% end %>
-    </table>
+   </table>
 
     <h3>You've heard...</h3>
 
-      <table class="table detailtable">
-        <% @person.posted_quotes.each do |quote| %>
-          <tr>
-            <% if !@editing  %>
-              <td>
-                <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
-              </td>
-            <% elsif @editing && quote.id == @quote.id %>
-              <td>
-                <h3>Editing a quote</h3>
-              </td>
-            <% else %>
-              <td>
-              </td>
-            <% end %>
-        <td>
-          <%= quote.body %>
-        </td>
-        <td>
-          from <%= quote.speaker.name %> on <%= quote.created_at.strftime("%m/%d/%Y")  %>
-        </td>
-     </tr>
-     <% end %>
-    </table>
+    <table class="table detailtable">
+      <% @person.posted_quotes.each do |quote| %>
+        <tr>
+          <% if !@editing  %>
+            <td>
+              <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+            </td>
+            <td>
+              <%= quote.body %>
+            </td>
+          <% elsif @editing && quote.id == @quote.id %>
+            <td>
+              <%= form_for @quote, url: person_quote_path(@person.id, @quote.id) do |f| %>
+                <%= f.text_area :body %>
+                <%= f.submit "Go" %>
+              <% end %>
+            </td>
+          <% else %>
+            <td>
+              <%= quote.body %>
+            </td>
+          <% end %>
+      <td>
+        from <%= quote.speaker.name %> on <%= quote.created_at.strftime("%m/%d/%Y")  %>
+      </td>
+   </tr>
+   <% end %>
+  </table>
 
   <div class="btn btn-default self_destruct_button">
     <span class="glyphicon glyphicon-remove-sign menu-glyph"></span>
