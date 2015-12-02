@@ -32,7 +32,7 @@ class QuotesController < ApplicationController
     @on_detail = true
     @quote.update(quote_params[:quote])
     @person = Person.find(params[:person_id])
-    render template: "people/detail"
+    redirect_to person_detail_path(@person.id)
   end
 
 
