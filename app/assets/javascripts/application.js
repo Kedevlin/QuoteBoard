@@ -16,7 +16,10 @@
 // = require bootstrap-sprockets
 // = require_tree .
 
+console.log("doing js");
+
 $(function() {
+  console.log("set up handler");
   $("#new_quote_button").click(function(e) {
     $("#new_quote_form").show();
   });
