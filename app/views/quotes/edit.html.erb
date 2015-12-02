@@ -6,12 +6,18 @@
     <table class="table detailtable">
       <% @person.spoken_quotes.each do |quote| %>
         <tr>
-          <td>
-            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
-          </td>
-          <td>
-            <%= quote.body %>
-          </td>
+          <% if quote.id == @quote.id %>
+            <td>
+              <%= form_for @quote, url: person_quote_path(@person.id, @quote.id) do |f| %>
+                <%= f.text_area :body %>
+                <%= f.submit "Go" %>
+              <% end %>
+            </td>
+          <% else %>
+            <td>
+              <%= quote.body %>
+            </td>
+          <% end %>
           <td>
             from <%= quote.poster.name %> on <%= quote.created_at.strftime("%m/%d/%Y") %>
           </td>
@@ -24,14 +30,7 @@
     <table class="table detailtable">
       <% @person.posted_quotes.each do |quote| %>
         <tr>
-          <% if !@editing  %>
-            <td>
-              <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
-            </td>
-            <td>
-              <%= quote.body %>
-            </td>
-          <% elsif @editing && quote.id == @quote.id %>
+          <% if quote.id == @quote.id %>
             <td>
               <%= form_for @quote, url: person_quote_path(@person.id, @quote.id) do |f| %>
                 <%= f.text_area :body %>

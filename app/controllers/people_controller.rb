@@ -32,7 +32,6 @@ class PeopleController < ApplicationController
   def detail
     @person = Person.find(params[:id])
     @on_detail = true
-    @editing = false
   end
 
   def person_home
