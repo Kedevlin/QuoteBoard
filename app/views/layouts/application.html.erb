@@ -16,7 +16,7 @@
           <% end %>
         </div>
 
-        <% if @faux_logged_in %>
+        <% if @faux_logged_in && !@on_detail %>
           <div class="menu-button-holder">
             <div class= "btn btn-default menu-button", id= "new_quote_button">
                 <span class="glyphicon glyphicon-pencil menu-glyph"></span>

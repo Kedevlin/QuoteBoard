@@ -11,7 +11,6 @@ class HomeController < ApplicationController
   end
 
   def index
-    @faux_logged_in = request.path_info.include?('people')
   end
 
 end
