@@ -7,7 +7,10 @@
       <% @person.spoken_quotes.each do |quote| %>
         <tr>
           <td>
-            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "quote_button" %>
+          </td>
+          <td>
+            <%= button_to "✖", person_quote_path(@person.id, quote.id), method: :delete, class: "quote_button", data: { confirm: 'Are you sure?' } %>
           </td>
           <td>
             <%= quote.body %>
