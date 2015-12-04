@@ -117,49 +117,79 @@ select#person_id {
 }
 
 //header menu
+@media (min-width: 590px){
+  #back_to_index_button {
+    padding-left: 0px;
+  }
 
-#back_to_index_button {
-  padding-left: 0px;
+  .menu-button {
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 2px;
+  }
+
+  .menu-button:hover {
+    background-color: transparent;
+  }
+
+  .menu-button:hover * {
+    color: #CACBC7;
+  }
+
+  .menu-glyph {
+    font-size:13px;
+    color: #F8F8F8;
+  }
+
+  .menu-word {
+    padding-left: 3px;
+    color: #F8F8F8;
+  }
+
+  .menu-button-holder {
+    float: left;
+    padding-left: 3px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+  }
 }
 
-.menu-button {
-  display: inline-block;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  margin-top: 25px;
-  padding-left: 15px;
-  padding-right: 2px;
+//for when screen is smaller
+@media(max-width: 589px) {
+  .menu-holder {
+    height: 45px;
+    max-height: 45px;
+    position: relative;
+    background-color: #3c404b;
+    background: -webkit-linear-gradient(#56585D, #2F3034);
+    background: -moz-linear-gradient(#56585D, #2F3034);
+    background: linear-gradient(#56585D, #2F3034);
+    border-bottom: 1px solid #000;
+  }
+
+  div#dropdown.menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .menu-holder:hover .menu {
+    display: block;
+  }
 }
 
-.menu-button:hover {
-  background-color: transparent;
-}
 
-.menu-button:hover * {
-  color: #CACBC7;
-}
-
-.menu-glyph {
-  font-size:13px;
-  color: #F8F8F8;
-}
-
-.menu-word {
-  padding-left: 3px;
-  color: #F8F8F8;
-}
-
-.menu-button-holder {
-  float: left;
-  padding-left: 3px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-}
 
 //newperson
 div.new-person {
