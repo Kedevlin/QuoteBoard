@@ -1,21 +1,21 @@
-<section class="new_person">
-  <%= form_for @person do |f| %>
-    <fieldset>
-      <legend>New Person</legend>
-      <div>
-        <%= f.label :name, "name"%>
-        <%= f.text_field :name, :required => true %><br />
-      </div>
+<div class="container">
+  <div class= "row">
+    <div class= "col-md-4 new-person">
+      <h2>New Person</h2>
+      <%= form_for @person do |f| %>
+        <div class="form-group">
+            <%= f.label :name, "name"%>
+            <%= f.text_field :name, :required => true, :class=> "form-control" %>
 
-      <div>
-        <%= f.label :bio, "bio" %>
-        <%= f.text_area :bio, :required => true %><br />
-      </div>
+            <%= f.label :bio, "bio" %>
+            <%= f.text_area :bio, :required => true, :class=>"form-control" %>
+          </div>
 
-      <div>
-        <%= f.submit "Create person", :class => 'create_person_button' %>
-      </div>
-    </fieldset>
-  <% end %>
-
-</section>
+          <div>
+            <%= f.submit "Create person", :class => 'btn create_person_button' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
