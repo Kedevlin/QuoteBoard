@@ -122,6 +122,14 @@ select#person_id {
     padding-left: 0px;
   }
 
+  div#dropdown.menu {
+    height:45px;
+    top: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
   .menu-button {
     display: inline-block;
     padding-top: 6px;
@@ -176,7 +184,7 @@ select#person_id {
   }
 
   div#dropdown.menu {
-    position: absolute;
+    height:45px;
     display: none;
     top: 100%;
     margin: 0;
@@ -184,7 +192,8 @@ select#person_id {
     padding: 0;
   }
 
-  .menu-holder:hover .menu {
+//instead of this add a little button
+  .menu-holder:hover div#dropdown.menu {
     display: block;
   }
 }
