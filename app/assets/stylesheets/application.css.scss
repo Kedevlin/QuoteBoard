@@ -16,10 +16,6 @@ body{
   min-height: 400px;
 }
 
-.col-md-1 {
-  width:10%;
-}
-
 header {
   height: 45px;
   max-height: 45px;
@@ -177,26 +173,35 @@ div.new-person {
   min-width: 300px;
   min-height: 200px;
   max-width: 500px;
-  max-height: 270px;
+  max-height: 320px;
 }
 
 div.new-person h2{
   font-family: Permanent Marker;
   text-align: center;
   margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-input.button.create_person_button {
+.new-person label {
+  font-size: 15px;
+}
+
+input.btn#create-person-button {
   margin: 0 auto;
+  display: block;
 }
 
 form#new_person.new_person {
   width: 75%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
+textarea#person_bio.form-control {
+  resize: none;
+}
 
 //stickynotes
 
