@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "compass";
 @import url('https://fonts.googleapis.com/css?family=Reenie Beanie|Permanent Marker|');
 
 //global
@@ -89,7 +90,7 @@ h1.detail {
   text-decoration: none;
 }
 
-//dropdown menus
+//dropdown menu for choosing a person
 
 
 .btn-default:focus {
@@ -116,10 +117,15 @@ select#person_id {
   cursor:pointer;
 }
 
-//header menu
+//header menu (collapsable)
+
 @media (min-width: 590px){
   #back_to_index_button {
     padding-left: 0px;
+  }
+
+  div.hamburger {
+    display: none;
   }
 
   div#dropdown.menu {
@@ -183,19 +189,14 @@ select#person_id {
     border-bottom: 1px solid #000;
   }
 
-  div#dropdown.menu {
-    height:45px;
-    display: none;
-    top: 100%;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-  }
+  // div#dropdown.menu {
+  //   top: 100%;
+  //   display: none;
+  //   margin: 0;
+  //   width: 100%;
+  //   padding: 0;
+  // }
 
-//instead of this add a little button
-  .menu-holder:hover div#dropdown.menu {
-    display: block;
-  }
 }
 
 
