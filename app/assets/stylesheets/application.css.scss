@@ -118,19 +118,19 @@ select#person_id {
 }
 
 //header menu (collapsable)
+.menu-holder {
+  height: 45px;
+  max-height: 45px;
+  position: relative;
+  background-color: #3c404b;
+  background: -webkit-linear-gradient(#56585D, #2F3034);
+  background: -moz-linear-gradient(#56585D, #2F3034);
+  background: linear-gradient(#56585D, #2F3034);
+  border-bottom: 1px solid #000;
+}
 
 //for when screen is smaller
 @media(max-width: 589px) {
-  .menu-holder {
-    height: 45px;
-    max-height: 45px;
-    position: relative;
-    background-color: #3c404b;
-    background: -webkit-linear-gradient(#56585D, #2F3034);
-    background: -moz-linear-gradient(#56585D, #2F3034);
-    background: linear-gradient(#56585D, #2F3034);
-    border-bottom: 1px solid #000;
-  }
 
   .menu {
     top: 100%;
@@ -156,7 +156,7 @@ select#person_id {
   }
 
   .menu#largescreen {
-    display: block !important;
+    display: inline-block !important;
     height:45px;
     top: 100%;
     margin: 0;
