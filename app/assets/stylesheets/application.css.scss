@@ -119,6 +119,33 @@ select#person_id {
 
 //header menu (collapsable)
 
+//for when screen is smaller
+@media(max-width: 589px) {
+  .menu-holder {
+    height: 45px;
+    max-height: 45px;
+    position: relative;
+    background-color: #3c404b;
+    background: -webkit-linear-gradient(#56585D, #2F3034);
+    background: -moz-linear-gradient(#56585D, #2F3034);
+    background: linear-gradient(#56585D, #2F3034);
+    border-bottom: 1px solid #000;
+  }
+
+  .menu {
+    top: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+}
+
 @media (min-width: 590px){
   #back_to_index_button {
     padding-left: 0px;
@@ -128,7 +155,8 @@ select#person_id {
     display: none;
   }
 
-  div#dropdown.menu {
+  .menu#largescreen {
+    display: block !important;
     height:45px;
     top: 100%;
     margin: 0;
@@ -175,31 +203,6 @@ select#person_id {
     margin-bottom: 0px;
   }
 }
-
-//for when screen is smaller
-@media(max-width: 589px) {
-  .menu-holder {
-    height: 45px;
-    max-height: 45px;
-    position: relative;
-    background-color: #3c404b;
-    background: -webkit-linear-gradient(#56585D, #2F3034);
-    background: -moz-linear-gradient(#56585D, #2F3034);
-    background: linear-gradient(#56585D, #2F3034);
-    border-bottom: 1px solid #000;
-  }
-
-  // div#dropdown.menu {
-  //   top: 100%;
-  //   display: none;
-  //   margin: 0;
-  //   width: 100%;
-  //   padding: 0;
-  // }
-
-}
-
-
 
 //newperson
 div.new-person {
