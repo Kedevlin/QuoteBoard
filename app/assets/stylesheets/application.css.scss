@@ -133,10 +133,17 @@ select#person_id {
 @media(max-width: 589px) {
 
   .menu {
-    top: 100%;
     margin: 0;
     width: 100%;
     padding: 0;
+  }
+
+  .dropdown .glyphicon {
+    display: none;
+  }
+
+  .dropdown .menu-button {
+    width: 130px;
   }
 
   .hidden {
@@ -144,6 +151,36 @@ select#person_id {
   }
 
 
+  #hamburger {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    transform: translateY(-50%);
+    background-color: transparent;
+    margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 2px;
+    }
+
+  #hamburger .menu-glyph {
+      font-size:18px;
+      color: #F8F8F8;
+    }
+
+  .menu-button-holder.hamburger {
+    height: 45px;
+  }
+
+  #hamburger:hover {
+      background-color: transparent;
+    }
+
+  #hamburger:hover * {
+      color: #CACBC7;
+    }
 }
 
 @media (min-width: 590px){
@@ -155,7 +192,7 @@ select#person_id {
     display: none;
   }
 
-  .menu#largescreen {
+  .menu {
     display: inline-block !important;
     height:45px;
     top: 100%;
