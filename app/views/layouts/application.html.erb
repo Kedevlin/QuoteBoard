@@ -2,59 +2,68 @@
 <html lang="en">
   <head>
     <title>QuoteBoard</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
   </head>
   <body>
-      <header class="container-fluid">
-        <div class="menu-button-holder">
-          <%= link_to root_path, class: "btn btn-default menu-button" do %>
-            <span class="glyphicon glyphicon-home menu-glyph"></span>
-            <span class="menu-word">Home</span>
-          <% end %>
+      <header class="container-fluid menu-holder">
+
+        <div class="menu-button-holder hamburger dropdown-toggle">
+          <div class= "btn btn-default menu-button", id= "hamburger">
+              <span class="glyphicon glyphicon-menu-hamburger menu-glyph"></span>
+          </div>
         </div>
 
-        <% if @faux_logged_in && !@on_detail %>
+        <div class="menu dropdown hidden">
           <div class="menu-button-holder">
-            <div class= "btn btn-default menu-button", id= "new_quote_button">
-                <span class="glyphicon glyphicon-pencil menu-glyph"></span>
-                <span class="menu-word">New Quote</span>
-            </div>
-          </div>
-
-          <div class="menu-button-holder">
-            <%= link_to person_detail_path, class: "btn btn-default menu-button" do %>
-              <span class="glyphicon glyphicon-tasks menu-glyph"></span>
-              <span class="menu-word">My details</span>
+            <%= link_to root_path, class: "btn btn-default menu-button" do %>
+              <span class="glyphicon glyphicon-home menu-glyph"></span>
+              <span class="menu-word">Home</span>
             <% end %>
           </div>
 
-        <% end %>
+          <% if @faux_logged_in && !@on_detail %>
+            <div class="menu-button-holder">
+              <div class= "btn btn-default menu-button", id= "new_quote_button">
+                  <span class="glyphicon glyphicon-pencil menu-glyph"></span>
+                  <span class="menu-word">New Quote</span>
+              </div>
+            </div>
 
+            <div class="menu-button-holder">
+              <%= link_to person_detail_path, class: "btn btn-default menu-button" do %>
+                <span class="glyphicon glyphicon-tasks menu-glyph"></span>
+                <span class="menu-word">My details</span>
+              <% end %>
+            </div>
+
+          <% end %>
+
+          <div class="menu-button-holder">
+            <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
+              <span class="glyphicon glyphicon-plus menu-glyph"></span>
+              <span class="menu-word">New Person</span>
+            <% end %>
+          </div>
+
+          <div class="menu-button-holder">
+            <div class="btn btn-default menu-button">
+             <span class="glyphicon glyphicon-user menu-glyph"></span>
+             <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Who are you?"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
+           </div>
+          </div>
+
+        <% if @on_detail %>
         <div class="menu-button-holder">
-          <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
-            <span class="glyphicon glyphicon-plus menu-glyph"></span>
-            <span class="menu-word">New Person</span>
+          <%= link_to person_home_path(@person.id), class: "btn btn-default menu-button", id: "back_to_index_button" do %>
+            <span class="glyphicon glyphicon-arrow-left menu-glyph"></span>
+            <span class="menu-word">Back to my index</span>
           <% end %>
         </div>
-
-        <div class="menu-button-holder">
-          <div class="btn btn-default menu-button">
-           <span class="glyphicon glyphicon-user menu-glyph"></span>
-           <%= collection_select :person, :id, Person.all, :id, :name, {prompt: "Who are you?"}, {class: "menu-word", onchange: "window.location='/people/'+this.value+'/home'"} %>
-         </div>
-      </div>
-
-      <% if @on_detail %>
-      <div class="menu-button-holder">
-        <%= link_to person_home_path(@person.id), class: "btn btn-default menu-button", id: "back_to_index_button" do %>
-          <span class="glyphicon glyphicon-arrow-left menu-glyph"></span>
-          <span class="menu-word">Back to my index</span>
         <% end %>
       </div>
-      <% end %>
     </header>
         <%= yield %>
   </body>

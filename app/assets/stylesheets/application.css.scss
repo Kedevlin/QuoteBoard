@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "compass";
 @import url('https://fonts.googleapis.com/css?family=Reenie Beanie|Permanent Marker|');
 
 //global
@@ -14,10 +15,6 @@ body{
   background-repeat: repeat;
   background-image: url("cork-board.jpg");
   min-height: 400px;
-}
-
-.col-md-1 {
-  width:10%;
 }
 
 header {
@@ -40,6 +37,10 @@ h1.detail {
   padding-bottom: 20px;
 }
 
+.detailholder h3 {
+  font-weight: bold;
+}
+
 .detailholder {
   width:90%;
   background-image: url('paper.jpg');
@@ -55,6 +56,16 @@ h1.detail {
 .detailtable {
   margin: 0 auto;
   width: 80%;
+}
+
+.detailtable td.quote, td.name, td.date {
+  width: 250px;
+}
+
+.detailtable .quote_button {
+  width: 27px;
+  height: 27px;
+  padding-right: 22px;
 }
 
 .self_destruct_button {
@@ -79,7 +90,7 @@ h1.detail {
   text-decoration: none;
 }
 
-//dropdown menus
+//dropdown menu for choosing a person
 
 
 .btn-default:focus {
@@ -106,116 +117,175 @@ select#person_id {
   cursor:pointer;
 }
 
-//header menu
-
-#back_to_index_button {
-  padding-left: 0px;
-}
-
-.menu-button {
-  display: inline-block;
-  padding-top: 6px;
-  padding-bottom: 6px;
+//header menu (collapsable)
+.menu-holder {
+  height: 45px;
+  max-height: 45px;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  margin-top: 25px;
-  padding-left: 15px;
-  padding-right: 2px;
+  background-color: #3c404b;
+  background: -webkit-linear-gradient(#56585D, #2F3034);
+  background: -moz-linear-gradient(#56585D, #2F3034);
+  background: linear-gradient(#56585D, #2F3034);
+  border-bottom: 1px solid #000;
 }
 
-.menu-button:hover {
-  background-color: transparent;
+//for when screen is smaller
+@media(max-width: 589px) {
+
+  .menu {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .dropdown .glyphicon {
+    display: none;
+  }
+
+  .dropdown .menu-button {
+    width: 130px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+  #hamburger {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    transform: translateY(-50%);
+    background-color: transparent;
+    margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 2px;
+    }
+
+  #hamburger .menu-glyph {
+      font-size:18px;
+      color: #F8F8F8;
+    }
+
+  .menu-button-holder.hamburger {
+    height: 45px;
+  }
+
+  .menu-button {
+    border-radius: 0%;
+  }
+
+  #hamburger:hover {
+      background-color: transparent;
+    }
+
+  #hamburger:hover * {
+      color: #CACBC7;
+    }
 }
 
-.menu-button:hover * {
-  color: #CACBC7;
-}
+@media (min-width: 590px){
+  #back_to_index_button {
+    padding-left: 0px;
+  }
 
-.menu-glyph {
-  font-size:13px;
-  color: #F8F8F8;
-}
+  div.hamburger {
+    display: none;
+  }
 
-.menu-word {
-  padding-left: 3px;
-  color: #F8F8F8;
-}
+  .menu {
+    display: inline-block !important;
+    height:45px;
+    top: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
 
-.menu-button-holder {
-  float: left;
-  padding-left: 3px;
-  padding-right: 10px;
-  margin-bottom: 0px;
+  .menu-button {
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 2px;
+  }
+
+  .menu-button:hover {
+    background-color: transparent;
+  }
+
+  .menu-button:hover * {
+    color: #CACBC7;
+  }
+
+  .menu-glyph {
+    font-size:13px;
+    color: #F8F8F8;
+  }
+
+  .menu-word {
+    padding-left: 3px;
+    color: #F8F8F8;
+  }
+
+  .menu-button-holder {
+    float: left;
+    padding-left: 3px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+  }
 }
 
 //newperson
-section.new_person {
-  width: 100%;
-  min-height: 700px;
-  min-width: 700px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-  margin-top: 20px;
-  text-align: center;
+div.new-person {
   background-image: url("blank-sticky-note.png");
-  background-size: 45%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  margin-left: 40 auto;
+  margin-right: 40 auto;
+  margin-top: 50px;
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 500px;
+  max-height: 320px;
 }
 
-.new_person .create_person_button {
-  margin: 20px;
-}
-
-.new_person fieldset {
+div.new-person h2{
+  font-family: Permanent Marker;
+  text-align: center;
   margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-.new_person fieldset div {
-  width: 22%;
+.new-person label {
+  font-size: 15px;
+}
+
+input.btn#create-person-button {
   margin: 0 auto;
-  line-height: 1.25;
-  padding-bottom: 10px;
+  display: block;
 }
 
-.new_person input#person_name {
-  float: right;
-  width: 180px;
-  border-color: #BFBFBF;
-  border-width: 1px;
-  border-style: solid;
+form#new_person.new_person {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
-.new_person textarea {
-  float: right;
-  width: 180px;
-  height: 60px;
-  border-color: #BFBFBF;
-  border-width: 1px;
+textarea#person_bio.form-control {
   resize: none;
 }
-
-.new_person label {
-  font-size: 0.4cm;
-  font-weight: normal;
-  float: left;
-  margin-bottom: 0;
-}
-
-.new_person legend {
-  font-family: Permanent Marker;
-  font-size: 1cm;
-  border-bottom: none;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-  padding-top: 60px;
-}
-
-
-
 
 //stickynotes
 

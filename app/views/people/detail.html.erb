@@ -6,14 +6,20 @@
     <table class="table detailtable">
       <% @person.spoken_quotes.each do |quote| %>
         <tr>
-          <td>
-            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "edit_quote_button" %>
+          <td class= buttondata>
+            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "quote_button" %>
           </td>
-          <td>
+          <td class= buttondata>
+            <%= button_to "✖", person_quote_path(@person.id, quote.id), method: :delete, class: "quote_button", data: { confirm: 'Are you sure?' } %>
+          </td>
+          <td class="quote">
             <%= quote.body %>
           </td>
-          <td>
-            from <%= quote.poster.name %> on <%= quote.created_at.strftime("%m/%d/%Y") %>
+          <td class="name">
+            posted by <%= quote.poster.name %>
+          </td>
+          <td class="date">
+           <%= quote.created_at.strftime("%m/%d/%Y") %>
           </td>
         </tr>
      <% end %>
@@ -49,6 +55,25 @@
    </tr>
    <% end %>
   </table>
+
+          <td class= buttondata>
+            <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "quote_button" %>
+          </td>
+          <td class= buttondata>
+            <%= button_to "✖", person_quote_path(@person.id, quote.id), method: :delete, class: "quote_button", data: { confirm: 'Are you sure?' } %>
+          </td>
+          <td class="quote">
+            <%= quote.body %>
+          </td>
+          <td class="name">
+            said by <%= quote.speaker.name %>
+          </td>
+          <td class="date">
+           <%= quote.created_at.strftime("%m/%d/%Y") %>
+          </td>
+        </tr>
+     <% end %>
+   </table>
 
   <div class="btn btn-default self_destruct_button">
     <span class="glyphicon glyphicon-remove-sign menu-glyph"></span>

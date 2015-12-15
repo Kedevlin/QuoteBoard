@@ -12,7 +12,6 @@
 //
 // = require jquery
 // = require jquery_ujs
-// = require turbolinks
 // = require bootstrap-sprockets
 // = require_tree .
 
@@ -29,4 +28,20 @@ $(function() {
   $("#cancel_button").click(function(e) {
     $("#new_quote_form").hide();
   });
+});
+
+$(function() {
+
+// Dropdown toggle
+$('.dropdown-toggle').click(function(){
+  $(this).next('.dropdown').toggleClass('hidden');
+});
+
+$(document).click(function(e) {
+  var target = e.target;
+  if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+    $('.dropdown').toggleClass('hidden');
+  }
+});
+
 });

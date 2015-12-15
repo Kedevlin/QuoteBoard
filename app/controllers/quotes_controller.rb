@@ -9,6 +9,12 @@ class QuotesController < ApplicationController
     redirect_to person_home_path(params[:id])
   end
 
+  def destroy
+    id = params[:id]
+    Quote.destroy(id)
+    redirect_to person_detail_path(params[:person_id])
+  end
+
   def edit
     @person = Person.find(params[:person_id])
     @quote = Quote.find(params[:id])
