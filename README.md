@@ -1,4 +1,4 @@
-=begin rdoc
+
 == README
 
 #QuoteBoard
@@ -16,5 +16,4 @@
 #Ruby version 2.2.3
 #Rails version 4.2.4
 
-=end
 <tt>rake doc:app</tt>.
