@@ -1,5 +1,4 @@
 class QuotesController < ApplicationController
-  before_action :get_quote
 
   def create
     Quote.create(
@@ -25,11 +24,16 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
   end
 
+  def home_quote
+    @quote = Quote.find(params[:id])
+  end
+
   def new
     @quote = Quote.new
   end
 
   def show
+    @quote = Quote.find(params[:id])
   end
 
   def update
