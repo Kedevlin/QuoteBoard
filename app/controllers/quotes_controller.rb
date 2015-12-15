@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  before_action :get_quote
 
   def create
     Quote.create(
