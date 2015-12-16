@@ -8,11 +8,6 @@
 
 A note to Adies- we haven't started javascript yet, but there are a couple of lines in assets/javascripts/application.js to toggle classes and to show/hide on click.
 
-
-See the project trello board for an abridged list tasks that need to be done:  
-https://trello.com/b/z9CQY79Z/quoteboard  
-
-
 Includes gemset for easy configuration.  
 - Ruby version 2.2.3  
 - Rails version 4.2.4  
