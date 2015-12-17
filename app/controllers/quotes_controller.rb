@@ -37,6 +37,7 @@ class QuotesController < ApplicationController
   end
 
   def update
+    @quote = Quote.find(params[:id])
     @on_detail = true
     @quote.update(quote_params[:quote])
     @person = Person.find(params[:person_id])
