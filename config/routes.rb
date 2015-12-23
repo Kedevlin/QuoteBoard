@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :quotes
 
+  resources :sessions, :only => [:new, :create, :destroy]
+
   resources :people do
     resources :quotes
   end
