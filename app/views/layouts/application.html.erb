@@ -42,23 +42,20 @@
           <% end %>
 
           <div class="menu-button-holder">
-            <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
-              <span class="glyphicon glyphicon-plus menu-glyph"></span>
-              <span class="menu-word">New Person</span>
-            <% end %>
-          </div>
-
-
-          <div class="menu-button-holder">
             <div class="btn btn-default menu-button">
-             <span class="glyphicon glyphicon-user menu-glyph"></span>
              <% if logged_in? %>
-                <%= link_to logout_path, class: "menu-word" do %>
+                <%= link_to logout_path, class: "menu-word", method: :delete do %>
+                  <span class="glyphicon glyphicon-user menu-glyph"></span>
                   <span class="menu-word">Logout</span>
                 <% end %>
             <% else %>
               <%= link_to login_path, class: "menu-word" do %>
+                <span class="glyphicon glyphicon-user menu-glyph"></span>
                 <span class="menu-word">Login</span>
+              <% end %>
+              <%= link_to new_person_path, class: "btn btn-default menu-button" do %>
+                <span class="glyphicon glyphicon-plus menu-glyph"></span>
+                <span class="menu-word">New Person</span>
               <% end %>
             <% end %>
            </div>
