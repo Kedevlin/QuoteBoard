@@ -1,21 +1,40 @@
 <div class="container">
   <div class= "row">
+      <% if @person.errors.any? %>
+      <div class= "new-person-errors">
+        <div id="error_explanation">
+          <ul>
+            <% @person.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <% end %>
     <div class= "col-md-4 new-person">
       <h2>New Person</h2>
       <%= form_for @person do |f| %>
         <div class="form-group">
-            <%= f.label :name, "name"%>
-            <%= f.text_field :name, :required => true, :class=> "form-control" %>
+          <%= f.label :username %>
+          <%= f.text_field :username, :required => true, :class=> "form-control" %>
 
-            <%= f.label :bio, "bio" %>
-            <%= f.text_area :bio, :required => true, :class=>"form-control" %>
-          </div>
+          <%= f.label :name %>
+          <%= f.text_field :name, :required => true, :class=> "form-control" %>
 
-          <div>
-            <%= f.submit "Create person", :class => 'btn',:id=> 'create-person-button' %>
-          </div>
+          <%= f.label :bio %>
+          <%= f.text_area :bio, :required => true, :class=>"form-control" %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, :required => true, :class=>"form-control" %>
+
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, :required => true, :class=>"form-control" %>
         </div>
-      <% end %>
-    </div>
+
+        <div class="actions bottom-margin text-center" >
+          <%= f.submit "Create person", :class => 'btn btn-primary',:id=> 'create-person-button' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

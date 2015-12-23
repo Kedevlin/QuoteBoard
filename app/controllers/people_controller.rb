@@ -3,8 +3,12 @@ class PeopleController < ApplicationController
   before_action :get_quotes
 
   def create
-    Person.create(person_params[:person])
-    redirect_to :controller => 'home', :action => 'index'
+    @person = Person.new(person_params)
+    if @person.save
+      redirect_to :controller => 'home', :action => 'index'
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -45,13 +49,9 @@ class PeopleController < ApplicationController
     redirect_to person_home_path(params[:person][:id])
   end
 
-
-
-
   private
 
   def person_params
-    params.permit(person:[:name, :bio, :birthday])
+    params.require(:person).permit(:name, :bio, :username, :password, :password_confirmation)
   end
-
 end
