@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   resources :quotes
 
-  resources :sessions, :only => [:new, :create, :destroy]
-
+  get 'login/' => 'sessions#new', as: :login
+  post 'login/' => 'sessions#create'
+  delete 'logout/' => 'sessions#destroy', as: :logout
+  
   resources :people do
     resources :quotes
   end
