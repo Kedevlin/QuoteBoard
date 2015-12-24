@@ -1,4 +1,6 @@
 class QuotesController < ApplicationController
+  before_action :require_login, only: [:new, :edit, :create, :update, :destroy]
+  before_action :correct_person, only: [:edit, :update, :destroy]
 
   def create
     Quote.create(
@@ -11,12 +13,13 @@ class QuotesController < ApplicationController
   def destroy
     id = params[:id]
     Quote.destroy(id)
-    redirect_to person_detail_path(params[:person_id])
+    redirect_to person_detail_path(current_person.id)
   end
 
   def edit
-    @person = Person.find(params[:person_id])
     @quote = Quote.find(params[:id])
+    @person = Person.find(@quote.poster_id)
+    @people_options = Person.all.map{|p| [ p.name, p.id ] }
     @on_detail = true
   end
 
@@ -41,8 +44,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     @on_detail = true
     @quote.update(quote_params[:quote])
-    @person = Person.find(params[:person_id])
-    redirect_to person_detail_path(@person.id)
+    redirect_to person_detail_path(current_person.id)
   end
 
 

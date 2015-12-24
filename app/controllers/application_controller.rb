@@ -13,9 +13,8 @@ class ApplicationController < ActionController::Base
   end
 
   def correct_person
-    id = params[:person_id] || params[:id]
-    @person = Person.find(id)
-    if @person == current_person
+    quote = Quote.find(params[:id])
+    if quote.poster_id == current_person.id
     else
       flash[:error] = "You do not have permission to access that page."
       redirect_to root_path

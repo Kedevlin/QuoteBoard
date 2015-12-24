@@ -17,4 +17,8 @@
  </tr>
  <% end %>
 </table>
+  <% if logged_in? && @quote.poster_id == current_person.id %>
+    <%= link_to "Edit", edit_quote_path(@quote), :class => 'btn btn-primary' %>
+    <%= link_to 'Delete', "/quotes/#{@quote.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+  <% end %>
 </div>
