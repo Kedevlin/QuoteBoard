@@ -1,0 +1,22 @@
+<div class="container">
+  <div class= "row">
+    <div class= "col-md-4 new-person">
+      <h2>New Quote</h2>
+      <%= form_for @quote do |f| %>
+        <div class="form-group">
+          <%= f.label :body, "Quote: " %>
+          <%= f.text_area :body, :required => true, :class=> "form-control" %>
+          <br>
+          <%= f.label "Speaker: " %>
+          <%= f.select(:speaker_id, @people_options, {prompt: "Select"}) %>
+
+
+        </div>
+
+        <div class="actions bottom-margin text-center" >
+          <%= f.submit :class => 'btn btn-primary',:id=> 'create-person-button' %>
+        </div>
+      </div>
+    <% end %>s
+  </div>
+</div>
