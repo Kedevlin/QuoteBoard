@@ -39,13 +39,11 @@ class PeopleController < ApplicationController
   def detail
     @person = Person.find(params[:id])
     @on_detail = true
-    @faux_logged_in = true
   end
 
   def person_home
     @new_quote = Quote.new
     @person = Person.find(params[:id])
-    @faux_logged_in = true
   end
 
   def select

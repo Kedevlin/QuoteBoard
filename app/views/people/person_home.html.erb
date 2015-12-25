@@ -2,19 +2,6 @@
   <h1 class="stickypage">Quotehort Four</h1>
   <section>
     <ul class= "stickynotes_container">
-      <% if @faux_logged_in %>
-        <li class="stickynote" id="new_quote_form" style ="display:none">
-           <%= form_for @new_quote, url: create_quote_path do |f| %>
-              <div class="cancel" id="cancel_button">
-              <span>X</span>
-              </div>
-              <%= f.text_area :body, class: "stickyquote", placeholder: "Type quote here...", required: true %>
-              <%= f.collection_select(:speaker_id, Person.all, :id, :name, {:prompt => 'Who said it?'}, {:required => true, class: "stickyspeaker"}) %>
-               <%= f.submit 'Create quote', :class => 'create_quote_button' %>
-           <% end %>
-        </li>
-
-      <% end %>
       <% @quotes.each do |quote| %>
         <li class="stickynote ">
               <%= link_to "#{quote.body}", home_quote_path(quote), :class => "stickyquote" %>
