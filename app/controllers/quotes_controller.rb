@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   before_action :require_login, only: [:new, :edit, :create, :update, :destroy]
-  before_action :correct_person, only: [:edit, :update, :destroy]
+  before_action :correct_quote_person, only: [:edit, :update, :destroy]
 
   def create
     Quote.create(

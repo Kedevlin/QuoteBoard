@@ -1,6 +1,9 @@
 class PeopleController < ApplicationController
   before_action :get_people
   before_action :get_quotes
+  before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :correct_person, only: [:edit, :update, :destroy]
+
 
   def create
     @person = Person.new(person_params)
