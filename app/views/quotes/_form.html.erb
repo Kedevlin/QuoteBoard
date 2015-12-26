@@ -4,7 +4,7 @@
     <%= f.text_area :body, :required => true, :class=> "form-control" %>
     <br>
     <%= f.label "Speaker: " %>
-    <%= f.select(:speaker_id, @people_options, {prompt: "Select"}) %>
+    <%= f.select(:speaker_id, @people_options, {prompt: "Select"}, :required => true) %>
 
 
   </div>
