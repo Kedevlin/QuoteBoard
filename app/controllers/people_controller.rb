@@ -8,7 +8,8 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
     if @person.save
-      redirect_to :controller => 'home', :action => 'index'
+      flash[:success] = "You have successfully registered for this site."
+      redirect_to :controller => 'sessions', :action => 'new'
     else
       render :new
     end
