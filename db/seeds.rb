@@ -1,9 +1,9 @@
 
 people = [
-  { name: "Audrey", bio: "Long thumbs"},
-  { name: "Gregory", bio:"The nose knows"},
-  { name: "Geena", bio: "Loves to do a cartwheel"},
-  { name: "Hattie", bio: "Cloudy days are the best"}
+  { name: "Audrey", bio: "Long thumbs", username: "audrey", password: "password" },
+  { name: "Gregory", bio:"The nose knows", username: "gregory", password: "password" },
+  { name: "Geena", bio: "Loves to do a cartwheel", username: "geena", password: "password" },
+  { name: "Hattie", bio: "Cloudy days are the best", username: "hattie", password: "password" }
 ]
 
 people.each do |seed|
