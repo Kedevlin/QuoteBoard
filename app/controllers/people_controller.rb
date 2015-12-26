@@ -17,6 +17,8 @@ class PeopleController < ApplicationController
   def destroy
     p = Person.find(params[:id])
     p.destroy
+    reset_session
+    flash[:error] = "You are no longer a registered user of this site."
     redirect_to home_path
   end
 
