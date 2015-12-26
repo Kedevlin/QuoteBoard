@@ -11,7 +11,7 @@
     <table class="table detailtable">
       <% @person.spoken_quotes.each do |quote| %>
         <tr>
-          <% if logged_in? && quote.poster_id == current_person.id || quote.speaker_id == current_person.id %>
+          <% if logged_in? && (quote.poster_id == current_person.id || quote.speaker_id == current_person.id) %>
             <td class= buttondata>
               <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "quote_button" %>
             </td>
@@ -41,7 +41,7 @@
     <table class="table detailtable">
       <% @person.posted_quotes.each do |quote| %>
         <tr>
-          <% if logged_in? && quote.poster_id == current_person.id || quote.speaker_id == current_person.id %>
+          <% if logged_in? && (quote.poster_id == current_person.id || quote.speaker_id == current_person.id) %>
             <td>
               <%= button_to "✐", edit_person_quote_path(@person.id, quote.id), method: :get, class: "quote_button" %>
             </td>
