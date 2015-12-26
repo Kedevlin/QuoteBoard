@@ -20,7 +20,6 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     @person = Person.find(@quote.poster_id)
     @people_options = Person.all.map{|p| [ p.name, p.id ] }
-    @on_detail = true
   end
 
   def get_quote
@@ -42,11 +41,9 @@ class QuotesController < ApplicationController
 
   def update
     @quote = Quote.find(params[:id])
-    @on_detail = true
     @quote.update(quote_params[:quote])
     redirect_to person_detail_path(current_person.id)
   end
-
 
   private
 

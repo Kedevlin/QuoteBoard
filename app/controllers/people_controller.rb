@@ -38,7 +38,6 @@ class PeopleController < ApplicationController
 
   def detail
     @person = Person.find(params[:id])
-    @on_detail = true
   end
 
   def person_home
